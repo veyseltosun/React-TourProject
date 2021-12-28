@@ -1,13 +1,15 @@
-import React from "react";
+import React, {} from "react";
 import { data } from "../../helper/Data";
 import "./Card.css";
 
-function Card () {
+function Card (props) {
+    
     return (
         <div className="card-container">
+        
             {data.map((card) => {
                 return(
-                    <div className="cards" key={card.id}>
+                    <div className="cards" onClick={props.onMouseClick} key={card.id}>
                         <div className="title">
                             <h2>{card.title}</h2>
                         </div>
@@ -15,12 +17,15 @@ function Card () {
                         <img src={card.image} alt={card.title}/>
                         
 
-                        <div className="card-over">
+                        <div className={props.isVisible ? 'card-over' : 'card-over-no'}>
                             <p>{card.desc}</p>
                         </div>
                     </div>
                 )
             })}
+            
+
+           
         </div>
     )
     
