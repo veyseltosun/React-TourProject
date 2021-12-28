@@ -27,6 +27,7 @@
     object-fit: cover;
     height: 350px;
     width: 500px;
+    border-radius: 7px;
     filter: grayscale(0%);
 }
 
