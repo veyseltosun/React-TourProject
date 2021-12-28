@@ -15,7 +15,7 @@ function Card () {
                         <img src={card.image} alt={card.title}/>
                         
 
-                        <div className="card_over">
+                        <div className="card-over">
                             <p>{card.desc}</p>
                         </div>
                     </div>
