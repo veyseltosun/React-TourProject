@@ -1,14 +1,29 @@
 import React from "react";
-import { data } from "../../helper/data";
+import { data } from "../../helper/Data";
 import "./Card.css";
 
 function Card () {
-    return(
+    return (
         <div className="card-container">
-            <div className="cards">
-                <h2>{data[0].title}</h2>
-            </div>
+            {data.map((card) => {
+                return(
+                    <div className="cards" key={card.id}>
+                        <div className="title">
+                            <h2>{card.title}</h2>
+                        </div>
+                        
+                        <img src={card.image} alt={card.title}/>
+                        
+
+                        <div className="card_over">
+                            <p>{card.desc}</p>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     )
+    
 }
 export default Card;
+
